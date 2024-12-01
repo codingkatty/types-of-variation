@@ -27,10 +27,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Print name
+        run: echo "${{secrets.VITE_SUPABASE_KEY}}"
+
       # Build the project
       - name: Build the project
         env:
-          VITE_SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          VITE_SUPABASE_KEY: ${{secrets.VITE_SUPABASE_KEY}}
         run: npm run build
 
       # Deploy to GitHub Pages (using gh-pages branch)
