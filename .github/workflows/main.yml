@@ -30,6 +30,16 @@ jobs:
       - name: Print name
         run: echo ${{ vars.VITE_SUPABASE_KEY }}
 
+      - name: Verify Environment Variable
+        run: |
+          echo "Checking Supabase Key"
+          if [ -z "$VITE_SUPABASE_KEY" ]; then
+            echo "VITE_SUPABASE_KEY is not set"
+            exit 1
+          else
+            echo "VITE_SUPABASE_KEY is set"
+          fi
+
       # Build the project
       - name: Build the project
         env:
