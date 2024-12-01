@@ -1,4 +1,4 @@
-name: Environment Variables
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
@@ -20,4 +20,14 @@ jobs:
         env:
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
         run: |
+          echo "Injecting Supabase key into config.js"
+          # Use sed to replace the placeholder in config.js
           sed -i "s/__SUPABASE_KEY__/${SUPABASE_KEY}/g" ./config.js
+
+      - name: Commit updated config.js
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add ./src/config.js
+          git commit -m "Update config.js with Supabase API Key"
+          git push
