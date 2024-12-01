@@ -2,6 +2,7 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js";
 import { supabaseUrl, supabaseKey } from "./config.js";
 
 const supabase = createClient(supabaseUrl, supabaseKey);
+console.log(supabaseKey);
 
 const chartContext = document.getElementById("chart").getContext("2d");
 let chart;
