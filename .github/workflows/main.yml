@@ -28,7 +28,7 @@ jobs:
         run: npm install
 
       - name: Print name
-        run: echo "${{secrets.VITE_SUPABASE_KEY}}"
+        run: echo ${{ secrets.VITE_SUPABASE_KEY }}
 
       # Build the project
       - name: Build the project
