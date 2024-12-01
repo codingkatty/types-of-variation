@@ -15,7 +15,7 @@ I got this idea while reviewing my Biology textbook. It seemed pretty nice to do
 Here's a section where a yap about the code, so I can refresh my memories about them.
 
 ## Supabase ⚙️
-I've used Supabase to store all the info for the experiment. For the table, recorded data are `id`, `age`, `height/bloodtype` and `time`. I've learned a lot through this project, and this will definately help me in the future.
+I've used Supabase to store all the info for the experiment. For the table, recorded data are `id`, `age`, `height/bloodtype` and `time`. I've learned a lot through this project, and this will definately help me in the future. (Note: The environment variables couldn't be accesed for some reason. I've tried multiple ways to possibly fix it, but it did not work at last. So, I couldn't really learn much about Vite here.)
 
 ## Filter and Cookies 🍪
 Too prevent spamming and fake information, some filters were made to prevent information such as too *unbelieveable* values (such as negative height or non-human age). To not have dulplicates from same people, there's a cookie that could track if you've done the survey. It could be bypassed easily, though, by just deleting cookies.
