@@ -21,7 +21,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Inject Supabase Key into .env
+        run: echo "VITE_SUPABASE_KEY=${{ secrets.SUPABASE_KEY }}" > .env
+
+      - name: Print Environment Variables for Debugging
+        run: printenv
+
       - name: Build the project
-        run: |
-          echo "VITE_SUPABASE_KEY=${{ secrets.SUPABASE_KEY }}" > .env
-          npm run build
+        run: npm run build
