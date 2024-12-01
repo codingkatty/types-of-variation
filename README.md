@@ -1,6 +1,8 @@
 # Types of Variation 🧬
 Exploring the world of continuous and discontinuous variations.
 
+![banner](https://i.imgur.com/GBVZYGt.png)
+
 ## What it is ❓
 This is a website about an experiment for *continuous* and *discontinuous* variations. It collects data for continuous and discontinuous features, like your height and bloodtype. I've also implemented a 'age' factor, which by hovering the chart, users can see the age range and average age for each catagory.
 
