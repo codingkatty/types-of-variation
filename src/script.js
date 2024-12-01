@@ -1,7 +1,7 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js";
 
 const supabaseUrl = "https://msfutgjgflgkckxreksp.supabase.co";
-const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
+const supabaseKey = process.env.VITE_SUPABASE_KEY;
 
 const supabase = createClient(supabaseUrl, supabaseKey);
 
