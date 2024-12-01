@@ -10,22 +10,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # Set up Node.js environment
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
+      # Install dependencies
       - name: Install dependencies
         run: npm install
 
-      - name: Inject Supabase Key into .env
-        run: echo "VITE_SUPABASE_KEY=${{ secrets.SUPABASE_KEY }}" > .env
-
-      - name: Print Environment Variables for Debugging
-        run: printenv
-
+      # Build the project
       - name: Build the project
+        env:
+          VITE_SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
         run: npm run build
+
+      # Deploy to GitHub Pages (using gh-pages branch)
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
