@@ -1,9 +1,5 @@
-// vite.config.js
-import { defineConfig } from 'vite';
-
 export default defineConfig({
-  root: './',
-  build: {
-    outDir: 'dist',
-  },
-});
+  define: {
+    'import.meta.env.VITE_SUPABASE_KEY': JSON.stringify(process.env.VITE_SUPABASE_KEY)
+  }
+})
