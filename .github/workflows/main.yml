@@ -29,4 +29,4 @@ jobs:
           git config --global user.email 'github-actions@github.com'
           git add ./config.js
           git commit -m "Update config.js with Supabase API Key"
-          git push
+          git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.ref }}
